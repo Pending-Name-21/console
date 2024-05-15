@@ -1,0 +1,46 @@
+Compiled from "MiClase.java"
+public class org.example.MiClase extends org.example.Clase {
+  public org.example.MiClase(java.lang.String);
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method org/example/Clase."<init>":()V
+       4: aload_0
+       5: aload_1
+       6: putfield      #2                  // Field name:Ljava/lang/String;
+       9: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: ldc           #4                  // String Hola, mundo!
+       5: invokevirtual #5                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       8: return
+
+  public java.lang.String getName();
+    Code:
+       0: aload_0
+       1: getfield      #2                  // Field name:Ljava/lang/String;
+       4: areturn
+
+  public java.lang.String[] lista();
+    Code:
+       0: iconst_1
+       1: anewarray     #6                  // class java/lang/String
+       4: dup
+       5: iconst_0
+       6: aload_0
+       7: getfield      #2                  // Field name:Ljava/lang/String;
+      10: invokedynamic #7,  0              // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      15: aastore
+      16: areturn
+
+  public java.util.ArrayList<java.lang.Integer> sizeName();
+    Code:
+       0: new           #8                  // class java/util/ArrayList
+       3: dup
+       4: aload_0
+       5: getfield      #2                  // Field name:Ljava/lang/String;
+       8: invokevirtual #9                  // Method java/lang/String.length:()I
+      11: invokespecial #10                 // Method java/util/ArrayList."<init>":(I)V
+      14: areturn
+}
