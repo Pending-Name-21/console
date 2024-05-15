@@ -1,16 +1,16 @@
 # BYTECODE JAVA
 
-El bytecode Java se encuentra dentro del archivo de extensión .class y es el tipo de instrucciones que la máquina virtual Java (JVM) espera recibir para posteriormente ser compiladas a lenguaje de máquina mediante un compilador JIT a la hora de su ejecución. Usualmente es el resultado de utilizar un compilador del lenguaje de programación Java (como javac), pero puede ser generado desde otros compiladores.
+The Java bytecode is found within the .class extension file and is the type of instructions that the Java virtual machine (JVM) expects to receive and then be compiled into machine language using a JIT compiler at the time of execution. It is generally the result of using a Java programming language compiler (such as javac), but it can be generated from other compilers.
 
-Las instrucciones caen en las siguientes categorías:
+The instructions fall into the following categories:
 
-* Mover de memoria a registros y viceversa (ej. aload_0, istore).
-* Aritmética y lógica (ej. ladd, fcmpl).
-* Conversión de tipos (ej. i2b, d2i).
-* Creación y manipulación de objetos (ej. new, putfield).
-* Manipulación de la pila de operandos (ej. swap, dup2).
-* Control de flujo (ej. ifeq, goto).
-* Invocación de métodos y retorno de estos (ej. invokespecial, areturn).
+- Move from memory to registers and vice versa (e.g. aload_0, istore).
+- Arithmetic and logic (e.g. ladd, fcmpl).
+- Type conversion (e.g. i2b, d2i).
+- Creation and manipulation of objects (e.g. new, putfield).
+- Manipulation of the operand stack (e.g. swap, dup2).
+- Flow control (e.g. ifeq, goto).
+- Invocation of methods and their return (e.g. invokespecial, areturn).
 
 ## Bytecode Structure
 Each instruction in Java bytecode is one byte in length, which is where the term “bytecode” comes from. Some instructions are followed by additional bytes that provide operands for the instructions. The bytecode instructions are designed to be compact, and efficient, and operate on a stack-based architecture. This is in contrast to most physical CPU architectures, which are register-based.
