@@ -1,0 +1,28 @@
+C VM for the Console Project
+
+- Virtual machines provide an abstract execution environment for running bytecode or intermediate code generated from source code, acting as an intermediary between the compiled code and the underlying hardware.
+- Using a VM offers:
+    - Platform independence: Games developed as bytecode can run on different hardware architectures and operating systems, as long as the VM is available for the target platform, eliminating the need for recompilation.
+    - Security: The VM can isolate and sandbox the execution of untrusted or potentially malicious game code, preventing it from directly accessing system resources or causing harm to the host system.
+    - Language independence: The VM can support the execution of games written in multiple programming languages, as long as the necessary compilers or interpreters can generate compatible bytecode.
+- Few options for incorporating a VM into a C project:
+    - Using an existing VM implementation, such as the Java Virtual Machine (JVM) or the Common Language Runtime (CLR). This approach leverages well-established VMs but may introduce additional dependencies and complexity.
+    - Build a custom VM tailored to the project's requirements. This approach offers more control and flexibility but requires significant effort and expertise in compiler and VM design.
+    - Use VM frameworks or libraries like LLVM (modular and reusable compiler/toolchain infrastructure) or the Python/C API (embedding the Python interpreter and executing Python code from within a C program).
+- Building a VM from scratch involves:
+    - Defining the instruction set (opcodes) for the VM
+    - Implementing the VM interpreter/execution engine in C
+    - Creating a compiler or translator that converts game code (like a custom language or existing language like C) into bytecode that can be executed by the VM
+- The main components needed to develop are:
+    - Parser/Compiler: Translates game code into bytecode instructions for the VM
+    - Bytecode Representation: A data structure to represent the bytecode program (like an array of instructions with opcodes and operands)
+    - VM Interpreter: The core execution engine that interprets and executes the bytecode instructions
+- Advantages of creating a custom C VM:
+    - Complete control over the execution environment and instruction set
+    - Ability to optimize the VM for specific use case (console games)
+    - Language independence (games can be written in any language that can be compiled to theVM's bytecode)
+    - Steps to integrate the custom VM into the console platform:
+    - Implement the parser/compiler to translate game code into bytecode
+    - Develop the VM interpreter in C to execute the bytecode
+    - Create an interface or API for developers to submit their games (bytecode) to the console platform
+    - Provide a runtime environment (like a console application) that loads and executes the game bytecode using the VM
