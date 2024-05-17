@@ -20,7 +20,7 @@ public class Main {
             ClassVisitor visitor = new ClassVisitor(Opcodes.ASM8) {
                 @Override
                 public MethodVisitor visitMethod(int access, String name, String descriptor, String signature,
-                                                 String[] exceptions) {
+                        String[] exceptions) {
                     System.out.println("Method: " + name);
 
                     MethodVisitor methodVisitor = new MethodVisitor(Opcodes.ASM8) {
