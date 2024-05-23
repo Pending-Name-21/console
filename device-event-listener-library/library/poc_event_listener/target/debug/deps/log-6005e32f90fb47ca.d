@@ -1,0 +1,10 @@
+/home/axel/Documents/JALA-USB/Desarrollo_Software_5/proyects_rust/repo_proyect_console_v2/console/device-event-listener-library/crossterm/poc_event_listener/target/debug/deps/liblog-6005e32f90fb47ca.rmeta: /home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/lib.rs /home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/macros.rs /home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/serde.rs /home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/__private_api.rs
+
+/home/axel/Documents/JALA-USB/Desarrollo_Software_5/proyects_rust/repo_proyect_console_v2/console/device-event-listener-library/crossterm/poc_event_listener/target/debug/deps/liblog-6005e32f90fb47ca.rlib: /home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/lib.rs /home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/macros.rs /home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/serde.rs /home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/__private_api.rs
+
+/home/axel/Documents/JALA-USB/Desarrollo_Software_5/proyects_rust/repo_proyect_console_v2/console/device-event-listener-library/crossterm/poc_event_listener/target/debug/deps/log-6005e32f90fb47ca.d: /home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/lib.rs /home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/macros.rs /home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/serde.rs /home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/__private_api.rs
+
+/home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/lib.rs:
+/home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/macros.rs:
+/home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/serde.rs:
+/home/axel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.21/src/__private_api.rs:

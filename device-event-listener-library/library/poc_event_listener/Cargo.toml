@@ -1,0 +1,20 @@
+[package]
+name = "poc_event_listener"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies.crossterm]
+version = "0.27"
+features = ["event-stream"]
+
+[[bin]]
+name = "event-read"
+path = "src/examples/crossterm/event-read.rs"
+
+[[bin]]
+name = "colors"
+path = "src/examples/crossterm/colors.rs"
+
+[[bin]]
+name = "drawing-with-cursor"
+path = "src/examples/crossterm/drawing-with-cursor.rs"
