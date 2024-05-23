@@ -1,0 +1,1 @@
+/home/axel/Documents/JALA-USB/Desarrollo_Software_5/proyects_rust/repo_proyect_console_v2/console/device-event-listener-library/crossterm/poc_event_listener/target/debug/event-read: /home/axel/Documents/JALA-USB/Desarrollo_Software_5/proyects_rust/repo_proyect_console_v2/console/device-event-listener-library/crossterm/poc_event_listener/src/examples/event-read.rs
