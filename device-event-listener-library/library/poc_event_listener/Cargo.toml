@@ -18,3 +18,17 @@ path = "src/examples/crossterm/colors.rs"
 [[bin]]
 name = "drawing-with-cursor"
 path = "src/examples/crossterm/drawing-with-cursor.rs"
+
+[[bin]]
+name = "mines-weeper"
+path = "src/examples/termion/mines-weeper.rs"
+
+[dependencies]
+libgo = "0.4.0"
+#liner = "0.4.4"
+rand = "0.3"
+rayon = "0.8"
+termion = "1.5.1"
+
+[dependencies.extra]
+git = "https://gitlab.redox-os.org/redox-os/libextra.git"
