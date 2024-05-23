@@ -10,3 +10,7 @@ features = ["event-stream"]
 [[bin]]
 name = "event-read"
 path = "src/examples/event-read.rs"
+
+[[bin]]
+name = "colors"
+path = "src/examples/colors.rs"
