@@ -1,26 +1,30 @@
-use memmap2::MmapOptions;
-use std::fs::File;
-use std::io::{self, Read};
+
 use jni::JNIEnv;
 use jni::sys::{jint, jobject};
+use memmap2::MmapOptions;
+use std::fs::File;
+use std::io::{self};
 
-fn moveFrame (x: usize, y:usize) -> io::Result<()> {
-    let mut file = File::open("/home/fundacion/University/Fifth/SoftwareDevelopment/SharedMemory/text.txt")?;
-
-    let mut contents = Vec::new();
-    file.read_to_end(&mut contents)?;
-
+fn show_map (rows: usize, cols:usize) -> io::Result<()> {
+    let file = File::open("/home/fundacion/University/Fifth/SoftwareDevelopment/console/shared-memory/SharedMemory/text.txt")?;
     let mmap = unsafe { MmapOptions::new().map(&file)? };
+    if mmap.len() < rows * cols {
+        return Err(io::Error::new(io::ErrorKind::UnexpectedEof, "File size is smaller than expected matrix size"));
+    }
 
-    println!("{:?}", &mmap[x]);
-    println!("{:?}", &mmap[y]);
-    // println!("{:?}", &mmap[1]);
+    for i in 0..rows {
+        for j in 0..cols {
+            let index = i * cols + j;
+            let c = mmap[index] as char;
+            print!("{} ", c);
+        }
+        println!();
+    }
 
     Ok(())
 }
 
 #[no_mangle]
-pub extern fn Java_Main_notifyMove<'local>(env: JNIEnv<'local>, caller: jobject, x: jint, y: jint) -> () {
-    println!("RENDER FROM RUST");
-    moveFrame(x.try_into().unwrap(), y.try_into().unwrap());
+pub extern fn Java_Main_notifyMove<'local>(env: JNIEnv<'local>, caller: jobject, rows: jint, cols: jint) -> () {
+    show_map(rows.try_into().unwrap(), cols.try_into().unwrap());
 }
