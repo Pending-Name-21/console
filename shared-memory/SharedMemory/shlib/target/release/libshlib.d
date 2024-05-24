@@ -1,1 +1,1 @@
-/home/fundacion/University/Fifth/SoftwareDevelopment/SharedMemory/shlib/target/release/libshlib.so: /home/fundacion/University/Fifth/SoftwareDevelopment/SharedMemory/shlib/src/lib.rs
+/home/fundacion/University/Fifth/SoftwareDevelopment/console/shared-memory/SharedMemory/shlib/target/release/libshlib.so: /home/fundacion/University/Fifth/SoftwareDevelopment/console/shared-memory/SharedMemory/shlib/src/lib.rs
