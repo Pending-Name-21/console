@@ -22,5 +22,7 @@ $ cargo run --bin [file name]
 ```
 
 ## Spike
-On the following link is more information about this libraries
-![]
+On the following link is more information about this spike
+https://tree.taiga.io/project/joseluis-teran-coffeetime/us/24?milestone=392128
+
+##### By Axel Ayala Siles
