@@ -1,0 +1,1 @@
+/home/fundacion/Documents/Ing_soft_ware/Semestre\ V/Desarrollo\ V/jni_spike/jni_shape/shape/target/debug/libshape.so: /home/fundacion/Documents/Ing_soft_ware/Semestre\ V/Desarrollo\ V/jni_spike/jni_shape/shape/src/lib.rs

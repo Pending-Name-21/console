@@ -1,0 +1,1 @@
+/home/fundacion/Documents/Ing_soft_ware/Semestre\ V/Desarrollo\ V/jni_spike/jni_basic_example/mylib/target/debug/libmylib.so: /home/fundacion/Documents/Ing_soft_ware/Semestre\ V/Desarrollo\ V/jni_spike/jni_basic_example/mylib/src/lib.rs

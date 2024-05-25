@@ -1,0 +1,1 @@
+/home/fundacion/Documents/Ing_soft_ware/Semestre\ V/Desarrollo\ V/jni_spike/jni_events/jni_events/target/release/libjni_events.so: /home/fundacion/Documents/Ing_soft_ware/Semestre\ V/Desarrollo\ V/jni_spike/jni_events/jni_events/src/lib.rs
