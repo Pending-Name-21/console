@@ -1,34 +1,43 @@
 extern crate jni;
+extern crate serde;
+#[macro_use]
+extern crate serde_derive;
+extern crate serde_json;
 
-use jni::JNIEnv;
-use jni::objects::{JObject, JClass, JString};
+pub mod frame;
+pub mod serialization;
+pub mod socket_client;
 
-#[derive(Debug)]
-struct Coord {
-    x: i32,
-    y: i32,
+use crate::frame::{Coord, Size, Sprite, Sound};
+use crate::serialization::serialize_to_json;
+use crate::socket_client::send_data_to_server;
+
+//use jni::JNIEnv;
+//use jni::objects::{JObject, JClass, JString};
+
+// Simulacion de datos
+fn simulate_data_reception() -> Sprite {
+    let position = Coord { x: 10, y: 20 };
+    let size = Size { height: 64.0, width: 64.0 };
+    let sound = Sound { file_path: String::from("/path/to/sound.wav"), can_play: true };
+    let sprite = Sprite {
+        position,
+        size,
+        is_hidden: false,
+        sound: Some(sound),
+    };
+
+    sprite
 }
 
-#[derive(Debug)]
-struct Size {
-    height: f64,
-    width: f64,
+pub fn run_client() {
+    let sprite = simulate_data_reception();
+    let json_data = serialize_to_json(&sprite);
+    let server_address = "127.0.0.1:8080";
+    send_data_to_server(&json_data, server_address);
 }
 
-#[derive(Debug)]
-struct Sound {
-    file_path: String,
-    can_play: bool,
-}
-
-#[derive(Debug)]
-struct Sprite {
-    position: Coord,
-    size: Size,
-    is_hidden: bool,
-    sound: Option<Sound>,
-}
-
+/* 
 // Function to extract `Coord` from a `JObject`
 fn get_coord(env: &mut JNIEnv, coord_obj: &JObject) -> Coord {
     let x = env.get_field(coord_obj, "x", "I").unwrap().i().unwrap();
@@ -86,3 +95,4 @@ pub extern "system" fn Java_com_example_RenderHandler_handleSound(env: JNIEnv, _
     // Handle sound in Rust
     println!("{:?}", sound);
 }
+*/
