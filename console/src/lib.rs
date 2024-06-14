@@ -13,23 +13,26 @@ use std::{env, thread};
 
 use dotenv::dotenv;
 
-use crate::frame::{Coord, Size, Sprite, Sound};
+use crate::frame::{Coord, Size, Sprite, Sound, Frame};
 use crate::serialization::serialize_to_json;
 use crate::socket_client::send_data_to_server;
 
-// Simulacion de datos
-fn simulate_data_reception(x: i32, y: i32) -> Sprite {
-    let position = Coord { x, y};
+// Simulación de datos
+fn simulate_data_reception(x: i32, y: i32) -> Frame {
+    let position = Coord { x, y };
     let size = Size { height: 64.0, width: 64.0 };
-    let sound = Sound { file_path: String::from("assets/images/pacman.jpeg"), can_play: true };
+    let sound = Sound { file_path: String::from("assets/sounds/pacman_sound.wav"), can_play: true };
     let sprite = Sprite {
         position,
         size,
         is_hidden: false,
-        sound: Some(sound),
+        file_path: String::from("assets/images/pacman.jpeg"),
     };
 
-    sprite
+    Frame {
+        sprite: Some(sprite),
+        sound: Some(sound),
+    }
 }
 
 pub fn run_client() {
@@ -40,8 +43,8 @@ pub fn run_client() {
     let mut y = -100;
 
     for _ in 0..100 {
-        let sprite = simulate_data_reception(x, y);
-        let json_data = serialize_to_json(&sprite);
+        let frame = simulate_data_reception(x, y);
+        let json_data = serialize_to_json(&frame);
         send_data_to_server(&json_data, &server_address);
 
         x += 4;
