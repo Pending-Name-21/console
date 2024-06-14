@@ -8,6 +8,10 @@ pub mod frame;
 pub mod serialization;
 pub mod socket_client;
 
+use std::env;
+
+use dotenv::dotenv;
+
 use crate::frame::{Coord, Size, Sprite, Sound};
 use crate::serialization::serialize_to_json;
 use crate::socket_client::send_data_to_server;
@@ -28,8 +32,9 @@ fn simulate_data_reception() -> Sprite {
 }
 
 pub fn run_client() {
+    dotenv().ok();
+    let server_address = env::var("SERVER_ADDRESS").expect("SERVER_ADDRESS must be set");
     let sprite = simulate_data_reception();
     let json_data = serialize_to_json(&sprite);
-    let server_address = "127.0.0.1:8080";
-    send_data_to_server(&json_data, server_address);
+    send_data_to_server(&json_data, &server_address);
 }

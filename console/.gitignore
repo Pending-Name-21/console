@@ -75,3 +75,6 @@ TAGS
 .project
 .cproject
 .settings/
+
+# Ignore .env file
+.env
