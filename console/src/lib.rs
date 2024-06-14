@@ -8,7 +8,8 @@ pub mod frame;
 pub mod serialization;
 pub mod socket_client;
 
-use std::env;
+use std::time::Duration;
+use std::{env, thread};
 
 use dotenv::dotenv;
 
@@ -17,10 +18,10 @@ use crate::serialization::serialize_to_json;
 use crate::socket_client::send_data_to_server;
 
 // Simulacion de datos
-fn simulate_data_reception() -> Sprite {
-    let position = Coord { x: 10, y: 20 };
+fn simulate_data_reception(x: i32, y: i32) -> Sprite {
+    let position = Coord { x, y};
     let size = Size { height: 64.0, width: 64.0 };
-    let sound = Sound { file_path: String::from("/path/to/sound.wav"), can_play: true };
+    let sound = Sound { file_path: String::from("assets/images/pacman.jpeg"), can_play: true };
     let sprite = Sprite {
         position,
         size,
@@ -34,7 +35,18 @@ fn simulate_data_reception() -> Sprite {
 pub fn run_client() {
     dotenv().ok();
     let server_address = env::var("SERVER_ADDRESS").expect("SERVER_ADDRESS must be set");
-    let sprite = simulate_data_reception();
-    let json_data = serialize_to_json(&sprite);
-    send_data_to_server(&json_data, &server_address);
+    
+    let mut x = 50;
+    let mut y = -100;
+
+    for _ in 0..100 {
+        let sprite = simulate_data_reception(x, y);
+        let json_data = serialize_to_json(&sprite);
+        send_data_to_server(&json_data, &server_address);
+
+        x += 4;
+        y -= 4;
+
+        thread::sleep(Duration::from_millis(80));
+    }
 }
