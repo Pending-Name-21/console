@@ -21,7 +21,7 @@ use crate::socket_client::send_data_to_server;
 fn simulate_data_reception(x: i32, y: i32) -> Frame {
     let position = Coord { x, y };
     let size = Size { height: 64.0, width: 64.0 };
-    let sound = Sound { file_path: String::from("assets/sounds/pacman_sound.wav"), can_play: true };
+    let sound = Sound { file_path: String::from("assets/sounds/guitar.mp3"), can_play: true };
     let sprite = Sprite {
         position,
         size,
