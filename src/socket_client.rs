@@ -1,8 +1,8 @@
 use std::io::prelude::*;
-use std::net::TcpStream;
+use std::os::unix::net::UnixStream;
 
-pub fn send_data_to_server(data: &str, server_address: &str) {
-    match TcpStream::connect(server_address) {
+pub fn send_data_to_server(data: &str, socket_path: &str) {
+    match UnixStream::connect(socket_path) {
         Ok(mut stream) => {
             stream.write_all(data.as_bytes()).expect("Failed to write to stream");
             println!("Sent data to server: {}", data);
