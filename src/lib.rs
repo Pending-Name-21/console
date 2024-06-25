@@ -7,6 +7,7 @@ extern crate serde_json;
 pub mod frame;
 pub mod serialization;
 pub mod socket_client;
+pub mod input_manager;
 
 use std::time::Duration;
 use std::{env, thread};
